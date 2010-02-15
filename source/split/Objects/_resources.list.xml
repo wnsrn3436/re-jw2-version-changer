@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<resources>
+  <resource name="obj_load" type="RESOURCE"/>
+  <resource name="obj_year" type="RESOURCE"/>
+  <resource name="obj_month" type="RESOURCE"/>
+  <resource name="obj_day" type="RESOURCE"/>
+  <resource name="obj_ok" type="RESOURCE"/>
+  <resource name="obj_producer" type="RESOURCE"/>
+</resources>

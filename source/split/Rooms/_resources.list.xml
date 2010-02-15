@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<resources>
+  <resource name="로드룸" type="RESOURCE"/>
+  <resource name="날자_결정룸" type="RESOURCE"/>
+</resources>

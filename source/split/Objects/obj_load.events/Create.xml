@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="CREATE" id="0">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">message_background(bac_message)
+//메시지 화면설정
+sk_sex_set_font(0);
+//폰트설정
+
+
+global.data=''
+
+var load, load2;
+
+global.load=get_open_filename("jw2_01.trc 파일을 선택해주세요|jw2_01.trc", "")
+
+if global.load!=""
+{
+open_file = file_bin_open(global.load, 0)
+
+for(i=0; i!=1117025; i+=1)
+{
+file_bin_seek(open_file, i)
+
+if i=1117007
+{
+file_message = sk_hex_conversion(file_bin_read_byte(open_file))
+file_bin_seek(open_file, i+1)
+file_message2 = sk_hex_conversion(file_bin_read_byte(open_file))
+
+global._year=sk_dec_conversion(file_message2+file_message)
+
+i+=2
+}
+//년도 얻기
+
+if i=1117024
+{
+global._month = file_bin_read_byte(open_file)
+file_bin_seek(open_file, i+1)
+global._day = file_bin_read_byte(open_file)
+}
+//기타 얻기
+}
+file_bin_close(open_file)
+
+room_goto_next()
+}
+else{game_end()}
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>
